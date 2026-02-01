@@ -20,7 +20,7 @@ modules:
   - type: akmods
     base: main
     install:
-      - nvidia
+      - nvidia-driver
     nvidia-driver: nvidia-open
 
   - type: dnf
