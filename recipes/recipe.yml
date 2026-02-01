@@ -6,7 +6,7 @@ name: devos
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/base-nvidia
 image-version: 42 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -16,13 +16,7 @@ modules:
     files:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-
-  - type: akmods
-    base: main
-    install:
-      - nvidia-driver
-    nvidia-driver: nvidia-open
-
+        
   - type: dnf
     repos:
       copr:
