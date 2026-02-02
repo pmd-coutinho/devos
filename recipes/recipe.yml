@@ -26,6 +26,8 @@ modules:
 
   - type: dnf
     repos:
+      files:
+        - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
       copr:
         - atim/starship
         - yalter/niri
@@ -33,8 +35,10 @@ modules:
       packages:
         - micro
         - starship
-        - sddm
+        - lightdm
+        - lightdm-gtk-greeter
         - niri
+        - noctalia-shell
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -45,10 +49,13 @@ modules:
   - type: systemd
     system:
       enabled:
-        - sddm.service
+        - lightdm.service
         - create-swapfile.service
       masked:
         - systemd-zram-setup@zram0.service
+      disabled:
+        - sddm.service
+        - gdm.service
 
   - type: default-flatpaks
     configurations:
