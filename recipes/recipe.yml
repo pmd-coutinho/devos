@@ -16,7 +16,20 @@ modules:
     files:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-        
+
+  - type: kargs
+    kargs:
+      - zswap.enabled=1
+      - zswap.compressor=lz4
+      - zswap.max_pool_percent=20
+
+  - type: systemd
+    system:
+      enabled:
+        - create-swapfile.service
+      masked:
+        - systemd-zram-setup@zram0.service
+
   - type: dnf
     repos:
       copr:

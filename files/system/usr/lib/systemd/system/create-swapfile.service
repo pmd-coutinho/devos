@@ -1,0 +1,12 @@
+[Unit]
+Description=Create swap file for zswap
+ConditionPathExists=!/var/swap/swapfile
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash -c 'btrfs subvolume create /var/swap 2>/dev/null || true; btrfs filesystem mkswapfile --size 16G /var/swap/swapfile && echo "/var/swap/swapfile none swap defaults 0 0" >> /etc/fstab && swapon /var/swap/swapfile'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
