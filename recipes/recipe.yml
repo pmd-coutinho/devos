@@ -52,7 +52,6 @@ modules:
         - create-swapfile.service
       masked:
         - systemd-zram-setup@zram0.service
-      disabled:
     user:
       enabled:
         - niri.service
