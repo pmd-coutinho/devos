@@ -32,10 +32,17 @@ modules:
         - atim/starship
     install:
       packages:
+        - atuin
+        - chezmoi
+        - alacritty
+        - ripgrep
+        - tmux
+        - btop
         - micro
         - starship
         - niri
         - noctalia-shell
+        - lazygit
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -63,6 +70,18 @@ modules:
         install: # system flatpaks we want all users to have and not remove
           - org.mozilla.firefox
           - org.gnome.Loupe
+          - com.slack.Slack
+          - com.visualstudio.code
+          - com.jetbrains.Rider
+          - com.vivaldi.Vivaldi
+          - com.bitwarden.desktop
+          - org.telegram.desktop
       - scope: user # Also add Flathub user repo, but no user packages
 
+  - type: chezmoi
+    repository: "https://github.com/pmd-coutinho/dotfiles" # my dotfiles repo
+    all-users: false # make users have to enable chezmoi manually
+    file-conflict-policy: replace # override changed files with those from the repo
+
+  - type: initramfs
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
