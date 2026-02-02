@@ -35,8 +35,7 @@ modules:
       packages:
         - micro
         - starship
-        - lightdm
-        - lightdm-gtk-greeter
+        - sddm
         - niri
         - noctalia-shell
     remove:
@@ -49,13 +48,11 @@ modules:
   - type: systemd
     system:
       enabled:
-        - lightdm.service
+        - sddm.service
         - create-swapfile.service
       masked:
         - systemd-zram-setup@zram0.service
       disabled:
-        - sddm.service
-        - gdm.service
     user:
       enabled:
         - niri.service
