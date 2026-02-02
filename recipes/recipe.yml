@@ -6,8 +6,8 @@ name: devos
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/base-nvidia-open
-image-version: 42 # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/wayblueorg/sway-nvidia-open-gdm
+image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -35,8 +35,6 @@ modules:
       packages:
         - micro
         - starship
-        - sddm
-        - niri
         - noctalia-shell
     remove:
       packages:
@@ -48,14 +46,9 @@ modules:
   - type: systemd
     system:
       enabled:
-        - sddm.service
         - create-swapfile.service
       masked:
         - systemd-zram-setup@zram0.service
-    user:
-      enabled:
-        - niri.service
-        - noctalia.service
 
 
   - type: default-flatpaks
