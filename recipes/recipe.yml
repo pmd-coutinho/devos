@@ -68,7 +68,6 @@ modules:
         scope: system
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
           - org.gnome.Loupe
           - com.slack.Slack
           - com.visualstudio.code
@@ -76,6 +75,17 @@ modules:
           - com.vivaldi.Vivaldi
           - com.bitwarden.desktop
           - org.telegram.desktop
+          - com.microsoft.AzureStorageExplorer
+          - com.discordapp.Discord
+          - com.valvesoftware.Steam
+          - com.heroicgameslauncher.hgl
+          - com.usebottles.bottles
+          - com.github.Matoking.protontricks
+          - com.github.tchx84.Flatseal
+          - net.lutris.Lutris
+          - md.obsidian.Obsidian
+          - org.libreoffice.LibreOffice
+          - org.gnome.Boxes
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: brew
