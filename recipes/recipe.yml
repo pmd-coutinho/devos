@@ -20,30 +20,35 @@ modules:
   - type: kargs
     kargs:
       - zswap.enabled=1
-      - zswap.compressor=lz4
-      - zswap.max_pool_percent=20
-
-  - type: systemd
-    system:
-      enabled:
-        - create-swapfile.service
-      masked:
-        - systemd-zram-setup@zram0.service
+      - zswap.compressor=zstd
+      - zswap.zpool=z3fold
+      - zswap.max_pool_percent=25
 
   - type: dnf
     repos:
       copr:
         - atim/starship
+        - yalter/niri
     install:
       packages:
         - micro
         - starship
+        - sddm
+        - niri
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+
+  - type: systemd
+    system:
+      enabled:
+        - sddm.service
+        - create-swapfile.service
+      masked:
+        - systemd-zram-setup@zram0.service
 
   - type: default-flatpaks
     configurations:
