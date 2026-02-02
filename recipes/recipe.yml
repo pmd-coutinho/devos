@@ -51,13 +51,16 @@ modules:
       enabled:
         - lightdm.service
         - create-swapfile.service
-        - niri.service
-        - noctalia.service
       masked:
         - systemd-zram-setup@zram0.service
       disabled:
         - sddm.service
         - gdm.service
+    user:
+      enabled:
+        - niri.service
+        - noctalia.service
+
 
   - type: default-flatpaks
     configurations:
