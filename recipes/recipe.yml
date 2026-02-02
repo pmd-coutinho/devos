@@ -51,6 +51,8 @@ modules:
       enabled:
         - lightdm.service
         - create-swapfile.service
+        - niri.service
+        - noctalia.service
       masked:
         - systemd-zram-setup@zram0.service
       disabled:
