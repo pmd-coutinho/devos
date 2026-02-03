@@ -90,9 +90,9 @@ modules:
           - io.podman_desktop.PodmanDesktop
       - scope: user # Also add Flathub user repo, but no user packages
 
-  - type: brew
-    nofile-limits: true # increase nofile limits
-    brew-analytics: false # disable telemetry
+  # - type: brew
+  #   nofile-limits: true # increase nofile limits
+  #   brew-analytics: false # disable telemetry
 
   - type: chezmoi
     repository: "https://github.com/pmd-coutinho/dotfiles" # my dotfiles repo
