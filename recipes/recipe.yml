@@ -28,6 +28,7 @@ modules:
     repos:
       files:
         - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
+        - https://packages.microsoft.com/yumrepos/vscode/config.repo
       copr:
         - atim/starship
     install:
@@ -43,6 +44,7 @@ modules:
         - niri
         - noctalia-shell
         - lazygit
+        - code
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -70,7 +72,6 @@ modules:
         install: # system flatpaks we want all users to have and not remove
           - org.gnome.Loupe
           - com.slack.Slack
-          - com.visualstudio.code
           - com.jetbrains.Rider
           - com.vivaldi.Vivaldi
           - com.bitwarden.desktop
@@ -86,6 +87,7 @@ modules:
           - md.obsidian.Obsidian
           - org.libreoffice.LibreOffice
           - org.gnome.Boxes
+          - io.podman_desktop.PodmanDesktop
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: brew
