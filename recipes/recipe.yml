@@ -31,6 +31,7 @@ modules:
         - https://packages.microsoft.com/yumrepos/vscode/config.repo
       copr:
         - atim/starship
+        - lizardbyte/stable
     install:
       packages:
         - atuin
@@ -45,6 +46,13 @@ modules:
         - noctalia-shell
         - lazygit
         - code
+        - Sunshine
+        - gh
+        - network-manager-applet
+        - peazip
+        - podman-compose
+        - zoxide
+        - zsh
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
