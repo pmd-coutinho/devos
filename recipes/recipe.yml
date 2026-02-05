@@ -69,6 +69,7 @@ modules:
         - systemd-zram-setup@zram0.service
     user:
       enabled:
+        - podman.socket
         - niri.service
         - noctalia.service
 
