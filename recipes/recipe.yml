@@ -32,6 +32,7 @@ modules:
       copr:
         - atim/starship
         - lizardbyte/stable
+        - dsommers/openvpn3
     install:
       packages:
         - atuin
@@ -53,6 +54,7 @@ modules:
         - podman-compose
         - zoxide
         - zsh
+        - openvpn3-client
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
