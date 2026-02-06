@@ -33,6 +33,7 @@ modules:
         - atim/starship
         - lizardbyte/stable
         - dsommers/openvpn3
+        - atim/cascadia-code-fonts
     install:
       packages:
         - atuin
@@ -55,6 +56,8 @@ modules:
         - zoxide
         - zsh
         - openvpn3-client
+        - cascadia-code-fonts
+        - cascadia-code-nf-fonts
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
