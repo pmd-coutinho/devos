@@ -58,6 +58,8 @@ modules:
         - openvpn3-client
         - cascadia-code-fonts
         - cascadia-code-nf-fonts
+        - zsh-syntax-highlighting
+        - zsh-autosuggestions
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -102,6 +104,7 @@ modules:
           - org.libreoffice.LibreOffice
           - org.gnome.Boxes
           - io.podman_desktop.PodmanDesktop
+          - com.getpostman.Postman
       - scope: user # Also add Flathub user repo, but no user packages
 
   # - type: brew
