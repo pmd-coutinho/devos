@@ -34,6 +34,7 @@ modules:
         - lizardbyte/stable
         - dsommers/openvpn3
         - atim/cascadia-code-fonts
+        - dsommers/openvpn3
     install:
       packages:
         - atuin
@@ -55,9 +56,8 @@ modules:
         - podman-compose
         - zoxide
         - zsh
+        - dnf-plugins-core
         - openvpn3-client
-        - cascadia-code-fonts
-        - cascadia-code-nf-fonts
         - zsh-syntax-highlighting
         - zsh-autosuggestions
     remove:
@@ -68,6 +68,13 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - CascadiaCode
+      url-fonts:
+        - name: CascadiaCode
+          url: https://github.com/microsoft/cascadia-code/releases/download/v2407.24/CascadiaCode-2407.24.zip
   - type: systemd
     system:
       enabled:
