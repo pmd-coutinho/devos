@@ -35,6 +35,7 @@ modules:
         - dsommers/openvpn3
         - atim/cascadia-code-fonts
         - dsommers/openvpn3
+        - jdxcode/mise
     install:
       packages:
         - atuin
@@ -60,6 +61,7 @@ modules:
         - openvpn3-client
         - zsh-syntax-highlighting
         - zsh-autosuggestions
+        - mise
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
