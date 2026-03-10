@@ -63,13 +63,12 @@ modules:
         - zsh-autosuggestions
         - mise
         - solaar
+        - system-config-printer
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - waybar
-        - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
   - type: fonts
     fonts:
@@ -117,8 +116,8 @@ modules:
           - com.getpostman.Postman
       - scope: user # Also add Flathub user repo, but no user packages
 
-  # - type: brew
-  #   nofile-limits: true # increase nofile limits
+  - type: brew
+    nofile-limits: true # increase nofile limits
   #   brew-analytics: false # disable telemetry
 
   - type: chezmoi
