@@ -63,13 +63,12 @@ modules:
         - zsh-autosuggestions
         - mise
         - solaar
+        - system-config-printer
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - waybar
-        - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
   - type: fonts
     fonts:
